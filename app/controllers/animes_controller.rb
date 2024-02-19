@@ -51,7 +51,7 @@ rescue ActiveRecord::RecordNotFound
 
 
 def anime_params
-  params.require(:anime).permit(:username, :email, :password, :password_confirmation)
+  params.require(:anime).permit(:english_title, :romanji_title, :start_air_date, :end_air_date, :age_rating, :number_of_episodes, :description, :season, :studio, :source, :duration)
 end
 
 end
