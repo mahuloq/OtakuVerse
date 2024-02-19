@@ -7,7 +7,8 @@ class Anime < ApplicationRecord
     validates :romanji_title, presence: true
     validates :start_air_date, presence: true
     validates :number_of_episodes, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-
+    
+    
 #Associations  
     has_many :reviews 
     has_many :ratings

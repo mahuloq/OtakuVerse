@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_16_235409) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_17_210836) do
   create_table "anime_lists", force: :cascade do |t|
     t.integer "anime_id", null: false
     t.integer "user_id", null: false
-    t.integer "list_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "list_type", default: 0
     t.index ["anime_id"], name: "index_anime_lists_on_anime_id"
-    t.index ["list_type_id"], name: "index_anime_lists_on_list_type_id"
     t.index ["user_id"], name: "index_anime_lists_on_user_id"
   end
 
