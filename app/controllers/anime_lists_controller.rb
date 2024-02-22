@@ -3,7 +3,7 @@ class AnimeListsController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:username])
-    @anime_list = AnimeList.where(user_id: @user.id).where(list_type: params[:status]) 
+    @anime_list = AnimeList.where(user_id: @user.id, list_type: params[:status])
     render json: @anime_list
   end
 
@@ -18,11 +18,11 @@ class AnimeListsController < ApplicationController
 
   def update
     anime_list = AnimeList.find_by(user_id: params[:user_id], anime_id: params[:anime_id])
-    anime_list.update(category: params[:list_type]) if anime_list
+    anime_list.update(list_type: params[:list_type]) if anime_list
   end
 
   def destroy
-    anime_list = AnimeList.find_by(user_id: params[:user_id], anime_id: params[:anime_id], category: params[:list_type])
+    anime_list = AnimeList.find_by(user_id: params[:user_id], anime_id: params[:anime_id], list_type: params[:list_type])
     anime_list.destroy if anime_list
     head :no_content
   end
