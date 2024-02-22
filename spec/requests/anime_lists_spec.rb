@@ -3,30 +3,48 @@ require 'rails_helper'
 RSpec.describe AnimeListsController, type: :request do
   describe 'GET #show' do
     let(:user) { FactoryBot.create(:user, username: 'test_user') }
-    let(:anime_list) { FactoryBot.create(:anime_list, user: user) }
+    let(:anime_list) { FactoryBot.build(:anime_list, user: user) }
+    let(:valid_headers) do
+    {
+      'Authorization' => 'Bearer YOUR_ACCESS_TOKEN',
+        'Content-Type' => 'application/json'
+    }
+  end
     it 'returns a success response' do
       get anime_list_path(username: user.username, list_type: 'completed'), headers: valid_headers
       expect(response).to be_successful
     end
   end
 
-  # describe 'POST #create' do
-  #   let(:valid_attributes) { FactoryBot.attributes_for(:anime_list) }
+  describe 'POST #create' do
+    let(:user) { FactoryBot.create(:user) }
+  let(:anime) { FactoryBot.create(:anime) }
+    let(:anime_list) { FactoryBot.build(:anime_list, user: user,anime:anime) }
 
-  #   context 'with valid parameters' do
-  #     it 'creates a new anime list' do
-  #       expect {
-  #         post anime_lists_path, params: { anime_list: valid_attributes }, headers: valid_headers
-  #       }.to change(AnimeList, :count).by(1)
-  #     end
+    let(:valid_headers) do
+    {
+      'Authorization' => 'Bearer YOUR_ACCESS_TOKEN',
+        'Content-Type' => 'application/json'
+    }
+  end
+    context 'with valid parameters' do
+      it 'creates a new anime list' do
+        
+        expect {
+          
+          post anime_lists_path, params: { anime_list: anime_list.attributes }.to_json, headers: valid_headers
+        }.to change(AnimeList, :count).by(1)
+        
+      end
 
-  #     it 'renders a JSON response with the new anime list' do
-  #       post anime_lists_path, params: { anime_list: valid_attributes }, headers: valid_headers
-  #       expect(response).to have_http_status(:created)
-  #       expect(response.content_type).to eq('application/json')
-  #       expect(response.location).to eq(anime_list_url(AnimeList.last))
-  #     end
-  #   end
+      it 'renders a JSON response with the new anime list' do
+        post anime_lists_path, params: { anime_list: anime_list.attributes }.to_json, headers: valid_headers
+        expect(response).to have_http_status(:created)
+        expect(response.body).to eq(anime_list.to_json)
+        expect(response.location).to eq(anime_list_url(AnimeList.last))
+      end
+    end
+  end
 
   #   context 'with invalid parameters' do
   #     it 'renders a JSON response with errors for the new anime list' do
