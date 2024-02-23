@@ -3,12 +3,14 @@ class AnimeListsController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:username])
-    @anime_list = AnimeList.where(user_id: @user.id, list_type: params[:status])
+    @anime_list = AnimeList.where(user_id: @user.id)
     render json: @anime_list
   end
 
   def create
+    
     @anime_list = AnimeList.new(anime_list_params)
+   
     if @anime_list.save
       render json: @anime_list, status: :created
     else
@@ -17,12 +19,17 @@ class AnimeListsController < ApplicationController
   end
 
   def update
-    anime_list = AnimeList.find_by(user_id: params[:user_id], anime_id: params[:anime_id])
-    anime_list.update(list_type: params[:list_type]) if anime_list
-  end
+    anime_list = AnimeList.find(params[:id])
+    anime_list.assign_attributes(anime_list_params) if anime_list
 
+if anime_list.save
+  render json: anime_list, status: :ok
+else
+  render json: anime_list.errors, status: :unprocessable_entity
+  end
+end
   def destroy
-    anime_list = AnimeList.find_by(user_id: params[:user_id], anime_id: params[:anime_id], list_type: params[:list_type])
+    anime_list = AnimeList.find(params[:id])
     anime_list.destroy if anime_list
     head :no_content
   end
@@ -32,6 +39,6 @@ class AnimeListsController < ApplicationController
   private
 
   def anime_list_params
-    params.require(:anime_list).permit(:anime_id, :user_id, :list_type, :start_date, :end_date, :episodes_watched)
+    params.permit(:anime_id, :user_id, :list_type, :start_date, :end_date, :episodes_watched)
   end
 end

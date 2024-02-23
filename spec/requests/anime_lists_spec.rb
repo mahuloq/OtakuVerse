@@ -24,51 +24,54 @@ RSpec.describe AnimeListsController, type: :request do
     let(:user) { create(:user) }
   let(:anime) { create(:anime) }
    
-  let(:anime_list) {create(:anime_list)}
     context 'with valid parameters' do
       
       before do
-        list_attributes = attributes_for(:anime_list, user_id: user.id, anime_id: anime.id).to_json
+
+        list_attributes = attributes_for(:anime_list, list_type: :completed,user_id: user.id, anime_id: anime.id)
         
-        post '/anime_lists', params: anime_list
+        post anime_lists_path, params: list_attributes
         
       end
+      it 'creates a new anime list' do
+          
 
-      it 'creates a new anime list' do  
         expect(response).to be_successful
       end
 
-      # it 'renders a JSON response with the new anime list' do
-      #   post anime_lists_path, params: { anime_list: anime_list.attributes }.to_json, headers: valid_headers
-      #   expect(response).to have_http_status(:created)
-      #   expect(response.body).to eq(anime_list.to_json)
-      #   expect(response.location).to eq(anime_list_url(AnimeList.last))
-      # end
+      it 'renders a JSON response with the new anime list' do
+        expect(response).to have_http_status(:created)
+        
+        expect(response.body).to eq(AnimeList.last.to_json)
+      end
     end
   end
 
-  #   context 'with invalid parameters' do
-  #     it 'renders a JSON response with errors for the new anime list' do
-  #       post anime_lists_path, params: { anime_list: { invalid_attribute: 'invalid value' } }, headers: valid_headers
-  #       expect(response).to have_http_status(:unprocessable_entity)
-  #       expect(response.content_type).to eq('application/json')
-  #     end
-  #   end
-  # end
+    context 'with invalid parameters' do
+      it 'renders a JSON response with errors for the new anime list' do
+        post anime_lists_path, params: { invalid_attribute: 'invalid value' }
+        expect(response).to have_http_status(:unprocessable_entity)
+       
+      end
+    end
+  end
 
-  # describe 'PUT #update' do
-  #   let(:user) { FactoryBot.create(:user) }
-  #   let(:anime_list) { FactoryBot.create(:anime_list, user: user) }
-  #   let(:new_list_type) { 'watching' }
+  describe 'PUT #update' do
+    let(:anime_list) {create(:anime_list, list_type: "completed") }
+    let(:new_list_type) { 'watching' }
 
-  #   context 'with valid parameters' do
-  #     it 'updates the requested anime list' do
-  #       put anime_list_path(anime_list), params: { anime_list: { list_type: new_list_type } }, headers: valid_headers
-  #       anime_list.reload
-  #       expect(anime_list.list_type).to eq(new_list_type)
-  #     end
-  #   end
-  # end
+    context 'with valid parameters' do
+      it 'updates the requested anime list' do
+       list = anime_list
+      
+        put "/anime_lists/#{list.id}", params:{ list_type: new_list_type } 
+        expect(response).to have_http_status(:ok)
+        list.reload
+
+        expect(AnimeList.last.list_type).to eq(new_list_type)
+      end
+    end
+  end
 
   # describe 'DELETE #destroy' do
   #   let(:user) { FactoryBot.create(:user) }
@@ -80,4 +83,4 @@ RSpec.describe AnimeListsController, type: :request do
   #     expect(AnimeList.find_by(id: anime_list.id)).to be_nil
   #   end
   # end
-end
+
