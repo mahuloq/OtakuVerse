@@ -1,5 +1,6 @@
 class AnimesController < ApplicationController
     before_action :set_anime, only: [:show, :update, :destroy]
+    before_action :authenticate_request, only: [:create, :update, :destroy]
 
     def create
         anime = Anime.new(anime_params)
@@ -51,7 +52,7 @@ rescue ActiveRecord::RecordNotFound
 
 
 def anime_params
-  params.require(:anime).permit(:english_title, :romanji_title, :start_air_date, :end_air_date, :age_rating, :number_of_episodes, :description, :season, :studio, :source, :duration)
+  params.permit(:english_title, :romanji_title, :start_air_date, :end_air_date, :age_rating, :number_of_episodes, :description, :season, :studio, :source, :duration)
 end
 
 end

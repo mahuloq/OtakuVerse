@@ -34,6 +34,11 @@ RSpec.describe User, type: :model do
         expect(user).not_to be_valid
       end
   
+      it 'hashes the password' do
+        user = create(:user, password: 'password')
+        expect(user.password_digest).not_to eq 'password'
+      end    
+
       it "is invalid with a password shorter than the minimum length" do
         user = FactoryBot.build(:user, password: "short")
         expect(user).not_to be_valid

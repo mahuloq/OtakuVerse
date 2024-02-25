@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:show, :update, :destroy]
+    before_action :authenticate_request, only: [:index, :show, :update, :destroy]
 
     def create
         user = User.new(user_params)
@@ -16,7 +17,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    render json: @user, status: :ok 
+    
+    render json: UserBlueprint.render(@user, view: :normal), status: :ok 
   end
 
   

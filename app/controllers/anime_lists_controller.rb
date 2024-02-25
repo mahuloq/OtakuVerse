@@ -1,5 +1,5 @@
 class AnimeListsController < ApplicationController
-
+  before_action :authenticate_request, only: [:create, :update, :destroy]
 
   def show
     @user = User.find_by(username: params[:username])
@@ -28,6 +28,7 @@ else
   render json: anime_list.errors, status: :unprocessable_entity
   end
 end
+
   def destroy
     anime_list = AnimeList.find(params[:id])
     anime_list.destroy if anime_list
