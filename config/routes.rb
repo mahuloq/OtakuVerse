@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources  :animes
   resources  :users
 
+#Person Profile
+resources :people, only: [:create, :show, :update, :destroy]
+
+
  #Profile Routes 
   get 'profiles/:username', to: 'profiles#show', as: :profile
 

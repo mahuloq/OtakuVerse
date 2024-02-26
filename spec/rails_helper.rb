@@ -2,6 +2,7 @@
 require 'spec_helper'
 require 'faker'
 require 'factory_bot_rails'
+require 'support/auth_helpers'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -38,6 +39,7 @@ RSpec.configure do |config|
     Rails.root.join('spec/fixtures')
   ]
   config.include FactoryBot::Syntax::Methods
+  config.include AuthHelpers, type: :request
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

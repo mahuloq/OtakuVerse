@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_20_010827) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_25_223149) do
   create_table "anime_lists", force: :cascade do |t|
     t.integer "anime_id", null: false
     t.integer "user_id", null: false
@@ -79,6 +79,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_20_010827) do
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "birthday"
+    t.string "website"
+    t.string "alternate_names"
+    t.text "more"
+    t.string "language"
   end
 
   create_table "profiles", force: :cascade do |t|

@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    
     render json: UserBlueprint.render(@user, view: :normal), status: :ok 
   end
 

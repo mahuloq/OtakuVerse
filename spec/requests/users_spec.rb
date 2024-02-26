@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
   describe 'POST /users' do
+
     context 'with valid parameters' do
       it 'creates a new user' do
         user_attributes = FactoryBot.attributes_for(:user)
@@ -48,10 +49,12 @@ RSpec.describe UsersController, type: :request do
 
   describe 'DELETE /users/:id' do
     let!(:user) { FactoryBot.create(:user) }
+    let(:token) {auth_token_for_user(user)}
+
 
     context 'when the user exists' do
       it 'deletes the user' do
-        delete "/users/#{user.id}"
+        delete "/users/#{user.id}", headers: {Authorization: "Bearer #{token}"}
         expect(response).to have_http_status(:no_content)
         expect(User.count).to eq(0)
       end
