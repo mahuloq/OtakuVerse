@@ -5,7 +5,7 @@ class UserBlueprint < Blueprinter::Base
     
 
 
-    view :normal do 
+    view :public_user do 
         fields :username
     end
 

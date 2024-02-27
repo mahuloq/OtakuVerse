@@ -6,7 +6,7 @@ class CastAndCrewBlueprint < Blueprinter::Base
     view :anime_page do 
         fields :role, :character
     
-        association :person, blueprint: PersonBlueprint, view: :cast_and_crew
+        association :person, blueprint: PersonBlueprint, view: :cast_crew
     end
 
  # May be detailed version, but seems anime_page will just be used twice, with different filter options between the main page, and the staff page.    

@@ -7,7 +7,9 @@ class AnimeBlueprint < Blueprinter::Base
     view :anime_page do 
         fields :english_title, :romanji_title, :start_air_date, :end_air_date, :number_of_episodes, :description, :season, :studio, :source, :duration, :age_rating
     
-        association :cast_and_crew, blueprint: CastAndCrewBlueprint, view: :anime_page
+        association :cast_and_crews, blueprint: CastAndCrewBlueprint, view: :anime_page
+
+        association :reviews, blueprint: ReviewBlueprint, view: :anime_page
     end
 
 # Provides all crew on extended staff page. Not Sure if I should provide here, or on the cast and crew blueprinter. Looks like above does the same thing.

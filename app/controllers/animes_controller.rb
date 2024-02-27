@@ -17,7 +17,7 @@ class AnimesController < ApplicationController
   end
 
   def show
-    render json: @anime, status: :ok 
+   render json: AnimeBlueprint.render(@anime, view: :anime_page), status: :ok 
   end
 
   
