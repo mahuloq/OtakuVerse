@@ -1,6 +1,11 @@
 
 class Anime < ApplicationRecord
 
+#methods
+def add_genre(genre)
+    self.genres << genre
+  end
+
 
 #Validations
     validates :english_title, presence: true

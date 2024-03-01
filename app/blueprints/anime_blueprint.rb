@@ -26,5 +26,8 @@ class AnimeBlueprint < Blueprinter::Base
 
     end
 
+    view :search_by_genre do 
+        fields :english_title, :romanji_title, :start_air_date, :number_of_episodes, :description, :season, :studio, :source, :duration, :age_rating 
+    end
 
 end

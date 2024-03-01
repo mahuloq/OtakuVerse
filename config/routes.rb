@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'sessions/create'
 
-  resources  :animes
+  resources :animes do
+    member do
+      post 'add_genre/:genre_id', to: 'animes#add_genre_to_anime', as: 'add_genre'
+    end
+  end
   resources  :users
 
 #Review with Comments
@@ -9,6 +13,9 @@ resources :reviews, only: [:create, :show, :update, :destroy]
 
 #Create Comments Route
 resources :comments, only: [:create, :update, :destroy]
+
+#Create/Update Genres
+resources :genres
 
 #Person Profile
 resources :people, only: [:create, :show, :update, :destroy]
