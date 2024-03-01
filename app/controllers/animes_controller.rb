@@ -42,10 +42,12 @@ def destroy
 end
 
 def add_genre_to_anime
-  genre = Genre.find(params[:genre_id])
+  genre_ids = JSON.parse(request.body.read)['genre_ids']
   
-  @anime.add_genre(genre)
-
+  genre_ids.each do |genre_id|
+    genre = Genre.find(genre_id)
+    @anime.genres << genre
+  end
   render json: @anime, status: :ok 
 end
 
