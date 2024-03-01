@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_25_223149) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_01_002921) do
   create_table "anime_lists", force: :cascade do |t|
     t.integer "anime_id", null: false
     t.integer "user_id", null: false
@@ -111,6 +111,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_25_223149) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "recommend", default: 0
     t.index ["anime_id"], name: "index_reviews_on_anime_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

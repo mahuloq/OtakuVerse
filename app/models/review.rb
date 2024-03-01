@@ -1,4 +1,10 @@
 class Review < ApplicationRecord
+enum recommend: {
+  recommend: 0,
+  mixed_feelings: 1,
+  do_not_recommend: 2
+}
+
 
 #Validations
   validates :user_id, presence: true 

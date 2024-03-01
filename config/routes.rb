@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   resources  :animes
   resources  :users
 
+#Review with Comments
+resources :reviews, only: [:create, :show, :update, :destroy]
+
+#Create Comments Route
+resources :comments, only: [:create, :update, :destroy]
+
 #Person Profile
 resources :people, only: [:create, :show, :update, :destroy]
 

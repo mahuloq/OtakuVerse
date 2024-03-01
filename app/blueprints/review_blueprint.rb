@@ -4,7 +4,7 @@ class ReviewBlueprint < Blueprinter::Base
 identifier :id
 
   view :anime_page do 
-    fields :content
+    fields :content, :recommend
 
     # association :ratings, blueprint: RatingBlueprint, view: :normal
 
@@ -12,7 +12,7 @@ identifier :id
   end
 
   view :review_page do
-      fields :content
+      fields :content, :recommend
 
       # association :ratings, blueprint: RatingBlueprint, view: :normal
 
@@ -20,7 +20,7 @@ identifier :id
   end
 
   view :review_detailed do
-    fields :content
+    fields :content, :recommend
 
     # association :ratings, blueprint: RatingBlueprint, view: :normal
 

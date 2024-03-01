@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :set_comment, only: [:show, :update, :destroy]
+    before_action :set_comment, only: [:update, :destroy]
     before_action :authenticate_request, only: [:create, :update, :destroy]
 
     def create
@@ -11,10 +11,6 @@ class CommentsController < ApplicationController
             render json:  comment.errors, status: :unprocessable_entity
       end
         end
-
-  def show
-    render json: CommentBlueprint.render(@comment, view: :comment), status: :ok 
-  end
 
   
   def update 
@@ -46,7 +42,7 @@ rescue ActiveRecord::RecordNotFound
 
 
 def comment_params
-  params.permit(:content)
+  params.permit(:review_id,:user_id,:content)
 end
 
 end

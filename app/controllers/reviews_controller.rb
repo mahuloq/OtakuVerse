@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
 
 def show
-  render json: @review, status: :ok 
+  render json: ReviewBlueprint.render(@review, view: :review_detailed), status: :ok 
 end
 
 
@@ -40,7 +40,7 @@ end
 
 
 private
-
+  
 def set_review
   @review = Review.find(params[:id])
 rescue ActiveRecord::RecordNotFound
@@ -49,7 +49,7 @@ end
 
 
 def review_params
-params.permit(:content)
+params.permit(:anime_id,:user_id,:content, :recommend)
 end
 
 end
