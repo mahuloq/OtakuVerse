@@ -1,5 +1,6 @@
 class AnimesController < ApplicationController
-    before_action :set_anime, only: [:show, :update, :destroy,:add_genre_to_anime]
+    before_action :set_anime, only: [:show, :update, :destroy,:add_genre_to_anime, :add_genres
+    ]
     before_action :authenticate_request, only: [:create, :update, :destroy]
 
     def create
@@ -42,15 +43,23 @@ def destroy
 end
 
 def add_genre_to_anime
+  genre = Genre.find(params[:genre_id])
+    
+  anime.add_genre(genre)
+  render json: @anime, status: :ok 
+end
+
+def add_genres
+
   genre_ids = JSON.parse(request.body.read)['genre_ids']
-  
+
   genre_ids.each do |genre_id|
     genre = Genre.find(genre_id)
     @anime.genres << genre
   end
-  render json: @anime, status: :ok 
-end
 
+  render json: @anime, status: :ok
+end
 
   private
 

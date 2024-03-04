@@ -10,6 +10,8 @@ class AnimeBlueprint < Blueprinter::Base
         association :cast_and_crews, blueprint: CastAndCrewBlueprint, view: :anime_page
 
         association :reviews, blueprint: ReviewBlueprint, view: :anime_page
+
+        association :genres, blueprint: GenreBlueprint, view: :genre_names
     end
 
 # Provides all crew on extended staff page. Not Sure if I should provide here, or on the cast and crew blueprinter. Looks like above does the same thing.

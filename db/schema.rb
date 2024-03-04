@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_01_002921) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_04_014608) do
   create_table "anime_lists", force: :cascade do |t|
     t.integer "anime_id", null: false
     t.integer "user_id", null: false
@@ -43,6 +43,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_002921) do
   create_table "animes_genres", id: false, force: :cascade do |t|
     t.integer "anime_id", null: false
     t.integer "genre_id", null: false
+    t.index ["anime_id", "genre_id"], name: "index_animes_genres_on_anime_id_and_genre_id", unique: true
   end
 
   create_table "cast_and_crews", force: :cascade do |t|

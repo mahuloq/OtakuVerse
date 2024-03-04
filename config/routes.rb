@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :animes do
     member do
       post 'add_genre/:genre_id', to: 'animes#add_genre_to_anime', as: 'add_genre'
+      post 'add_genres', to: 'animes#add_genres', as: 'add_genres'
     end
   end
   resources  :users
