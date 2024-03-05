@@ -3,6 +3,8 @@ class User < ApplicationRecord
 #Validation
     has_secure_password
   
+after_create :create_default_profile
+
     validates :username, presence: true, uniqueness: true, length: {minimum: 3, maximum: 30}
     validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :password, length: { minimum: 8, maximum: 128 }
@@ -19,10 +21,16 @@ class User < ApplicationRecord
     has_many :animes_rated, through: :ratings, source: :anime
     has_many :animes_reviewed, through: :reviews, source: :anime
 
-    private def validate_username
+    private 
+    
+    def validate_username
         unless username =~ /\A[a-zA-Z0-9_]+\Z/
             errors.add(:username, "can only contain letters, numbers, and underscores, and must include one letter or number")
-        end
+        end 
     end
+   
+    def create_default_profile
+        self.create_profile(bio: 'Default bio')
+      end
   end
   

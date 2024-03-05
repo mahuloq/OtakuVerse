@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_04_014608) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_05_010904) do
   create_table "anime_lists", force: :cascade do |t|
     t.integer "anime_id", null: false
     t.integer "user_id", null: false
@@ -93,6 +93,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_014608) do
     t.string "profile_picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "favorites"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
