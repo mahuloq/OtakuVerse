@@ -6,7 +6,7 @@ ruby "3.2.0"
 gem "rails", "~> 7.1.3"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -31,11 +31,16 @@ gem "bootsnap", require: false
 gem "bcrypt"
 gem "blueprinter"
 gem 'jwt'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 gem "rack-cors"
+
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -43,6 +48,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem "sqlite3", "~> 1.4"
 end
 
 group :development do
