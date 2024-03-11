@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         if user.save
             render json: user, status: :created
         else
-            render json:  user.errors, status: :unprocessable_entity
+            render json:  user.errors.full_messages, status: :unprocessable_entity
       end
         end
 
@@ -52,7 +52,7 @@ rescue ActiveRecord::RecordNotFound
 
 
 def user_params
-  params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  params.permit(:username, :email, :password, :password_confirmation)
 end
 
 end
