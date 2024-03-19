@@ -5,7 +5,7 @@ class AnimesController < ApplicationController
 
     def create
         anime = Anime.new(anime_params)
-        debugger
+        
     # anime.genres << anime_params.genre_ids
         if anime.save
             render json: anime, status: :created
