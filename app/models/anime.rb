@@ -15,6 +15,8 @@ def add_genre(genre)
     
     
 #Associations  
+    has_one_attached :cover_photo
+    has_many_attached :images
     has_many :reviews 
     has_many :ratings
     has_many :anime_lists

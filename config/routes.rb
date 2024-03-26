@@ -5,9 +5,13 @@ Rails.application.routes.draw do
     member do
       post 'add_genre/:genre_id', to: 'animes#add_genre_to_anime', as: 'add_genre'
       post 'add_genres', to: 'animes#add_genres', as: 'add_genres'
+      post 'upload_image', to: 'animes#upload_image'
+      post 'upload_cover', to: 'animes#upload_cover_photo'
     end
   end
-  resources  :users
+  resources :users do
+    post 'upload_image', to: 'users#upload_image'
+  end
 
 #Review with Comments
 resources :reviews, only: [:create, :show, :update, :destroy]
