@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
-    before_action :set_person, only: [:show, :update, :destroy]
-    before_action :authenticate_request, only: [:create, :update, :destroy]
+  before_action :set_person, only: [:show, :update, :destroy]
+  before_action :authenticate_request, only: [:create, :update, :destroy]
 
     def create
         person = Person.new(person_params)
