@@ -13,7 +13,7 @@ class AnimeBlueprint < Blueprinter::Base
 
         association :genres, blueprint: GenreBlueprint, view: :genre_names
 
-        association :cover_photo, blueprint: ImageSerializer
+        # association :cover_photo, blueprint: ImageBlueprint, view: :normal
     end
 
 # Provides all crew on extended staff page. Not Sure if I should provide here, or on the cast and crew blueprinter. Looks like above does the same thing.

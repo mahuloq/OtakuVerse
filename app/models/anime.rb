@@ -1,5 +1,6 @@
 
 class Anime < ApplicationRecord
+include Rails.application.routes.url_helpers
 
 #methods
 def add_genre(genre)
@@ -13,6 +14,12 @@ def add_genre(genre)
     validates :start_air_date, presence: true
     validates :number_of_episodes, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
     
+
+#Methods
+def cover_image_url
+  rails_blob_url(self.cover_photo, only_path: false) if self.cover_photo.attached?
+end
+
     
 #Associations  
     has_one_attached :cover_photo

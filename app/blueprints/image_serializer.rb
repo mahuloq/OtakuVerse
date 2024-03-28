@@ -1,10 +1,10 @@
-class ImageSerializer
-    include Blueprinter::Definition
-    identifier :id
+# class ImageBlueprint < Blueprinter::Base
+
+#     identifier :id
   
-    fields :url
+#     fields :url
   
-    def url
-      object.blob.url if object.attached?
-    end
-  end
+#     def url
+#       object.blob.url if object.attached?
+#     end
+#   end
