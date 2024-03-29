@@ -4,8 +4,6 @@ class AnimesController < ApplicationController
     before_action :authenticate_request, only: [:create, :update, :destroy]
 
     def create
-
-    debugger
         anime = Anime.new(anime_params)
 
         if anime.save
