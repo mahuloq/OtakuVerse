@@ -16,14 +16,14 @@ def add_genre(genre)
     
 
 #Methods
-# def cover_image_url
-#   rails_blob_url(self.cover_photo, only_path: false) if self.cover_photo.attached?
-# end
+def cover_photo_url
+  rails_blob_url(self.cover_photo, only_path: false) if self.cover_photo.attached?
+end
 
     
 #Associations  
-    # has_one_attached :cover_photo
-    # has_many_attached :images
+    has_one_attached :cover_photo
+    has_many_attached :images
     has_many :reviews 
     has_many :ratings
     has_many :anime_lists

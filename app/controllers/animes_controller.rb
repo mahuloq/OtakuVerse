@@ -4,19 +4,17 @@ class AnimesController < ApplicationController
     before_action :authenticate_request, only: [:create, :update, :destroy]
 
     def create
+
+    debugger
         anime = Anime.new(anime_params)
-        
-        @anime.images.attach(params[:images])
-        @anime.cover_photo.attach(params[:cover_photo])
-        
-    # anime.genres << anime_params.genre_ids
+
         if anime.save
             render json: anime, status: :created
         else
-            render json:  anime.errors, status: :unprocessable_entity
+            render json: anime.errors, status: :unprocessable_entity
       end
         end
-
+        
   def index
     render json: Anime.all
   end
@@ -75,7 +73,8 @@ def upload_image
 end
 
 def upload_cover_photo
-  if params[:image] && @anime.cover_photo.attach(params[:image])
+ 
+  if params[:cover_photo] && @anime.cover_photo.attach(params[:cover_photo])
     render json: {message: "Cover photo uploaded", url: rails_blob_url(@anime.cover_photo, only_path: false)},  status: :ok
  
   else
@@ -92,10 +91,9 @@ rescue ActiveRecord::RecordNotFound
   end
 
 
-def anime_params
-  params.permit(:english_title, :romanji_title, :start_air_date, :end_air_date, :age_rating, :number_of_episodes, :description, :season, :studio, :source, :duration, genre_ids: [], 
-    # images: [], cover_photo: []
-  )
-end
+  def anime_params
+    params.permit(:english_title, :romanji_title, :start_air_date, :end_air_date, :age_rating, :number_of_episodes, :description, :season, :studio, :source, :duration, :cover_photo, genre_ids: [])
+  end
+  
 
 end

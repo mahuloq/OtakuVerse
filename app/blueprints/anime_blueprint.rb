@@ -5,7 +5,7 @@ class AnimeBlueprint < Blueprinter::Base
 
     # View from main page looking at anime, smaller crew/staff
     view :anime_page do 
-        fields :english_title, :romanji_title, :start_air_date, :end_air_date, :number_of_episodes, :description, :season, :studio, :source, :duration, :age_rating
+        fields :english_title, :romanji_title, :start_air_date, :end_air_date, :number_of_episodes, :description, :season, :studio, :source, :duration, :age_rating, :cover_photo_url
     
         association :cast_and_crews, blueprint: CastAndCrewBlueprint, view: :anime_page
 
@@ -13,7 +13,6 @@ class AnimeBlueprint < Blueprinter::Base
 
         association :genres, blueprint: GenreBlueprint, view: :genre_names
 
-        # association :cover_photo, blueprint: ImageBlueprint, view: :normal
     end
 
 # Provides all crew on extended staff page. Not Sure if I should provide here, or on the cast and crew blueprinter. Looks like above does the same thing.
