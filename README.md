@@ -1,4 +1,8 @@
-<img alt="Discord" src="https://img.shields.io/discord/1223802253010407516?link=https%3A%2F%2Fdiscord.gg%2Fxay6yPavuS">
+<a href="https://discord.gg/xay6yPavuS">
+  <img alt="Discord" src="https://img.shields.io/discord/1223802253010407516">
+</a>
+
+Click here to join the projects discord.
 
 
 ![GitHub forks](https://img.shields.io/github/forks/mahuloq/OtakuVerse)  ![GitHub License](https://img.shields.io/github/license/mahuloq/OtakuVerse) ![GitHub Repo stars](https://img.shields.io/github/stars/mahuloq/OtakuVerse) ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/mahuloq/OtakuVerse)
@@ -42,5 +46,3 @@ Please make sure to update tests as appropriate.
 ## License
 
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/#)
-
-* ...
