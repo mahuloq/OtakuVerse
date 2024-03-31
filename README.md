@@ -6,7 +6,7 @@
 
 
 
-# Otakuverse Frontend
+# Otakuverse Backend
 
 Otakuverse is the backend of the Otakuverse project. The frontend of which can be found here
 
