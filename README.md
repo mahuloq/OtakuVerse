@@ -18,6 +18,26 @@ https://github.com/mahuloq/fe_OtakuVerse
 
 The Otakuverse project was made to provide a more community managed version of an anime database. Otakuverse allows users to add and edit animes, upload images, create cast a crews with links to the shows they have worked on. It also allows rating of shows and uses rankings provided by users to provide a daily updated top anime list. 
 
+## Features
+Controllers to add and delete the following
+
+1. Animes
+2. Genres
+3. Cast and Crew
+4. Ratings
+5. Reviews
+6. Comments
+7. Users
+8. Anime Lists
+9. Profiles
+
+## Testing
+
+Has tests for most of the controllers and features. Initate them by typing 
+
+```bash
+bundle exec rspec
+```
 ## Installation
 
 1. Fork this repository.
