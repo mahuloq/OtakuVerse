@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This blueprint is for the anime page, or for pages that require info from the anime page
 class AnimeBlueprint < Blueprinter::Base
     identifier :id
 
