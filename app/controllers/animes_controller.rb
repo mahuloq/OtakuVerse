@@ -18,7 +18,7 @@ class AnimesController < ApplicationController
   # end
       
   def index
-    render json: AnimeBlueprint.render(view: :top_anime), status: :ok
+    render json: AnimeBlueprint.render(Anime.all, view: :top_anime), status: :ok
   end
 
   def show

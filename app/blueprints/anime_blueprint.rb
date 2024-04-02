@@ -31,7 +31,7 @@ class AnimeBlueprint < Blueprinter::Base
     end
 
     view :top_anime do
-        fields :english_title, :start_air_date, :end_air_date, :number_of_episodes, :season
+        fields :english_title, :start_air_date, :end_air_date, :number_of_episodes, :season, :cover_photo_url
     end
 
     view :search_by_genre do 
