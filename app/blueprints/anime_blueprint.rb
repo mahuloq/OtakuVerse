@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This blueprint is for the anime page, or for pages that require info from the anime page
 class AnimeBlueprint < Blueprinter::Base
     identifier :id
 
@@ -27,6 +28,10 @@ class AnimeBlueprint < Blueprinter::Base
     view :person_profile do 
         fields :english_title, :season
 
+    end
+
+    view :top_anime do
+        fields :english_title, :start_air_date, :end_air_date, :number_of_episodes, :season, :cover_photo_url
     end
 
     view :search_by_genre do 
