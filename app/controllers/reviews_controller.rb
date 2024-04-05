@@ -1,9 +1,13 @@
+# frozen_string_literal: true
+
+# Reviews controller for CRUD
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:show, :update, :destroy]
-  before_action :authenticate_request, only: [:create, :update, :destroy]
+  before_action :set_review, only: %i[show update destroy]
+  before_action :authenticate_request, only: %i[create update destroy]
 
   def create
-      review = Review.new(review_params)
+      
+    review = @current_user.reviews.new(review_params)
   
       if review.save
           render json: review, status: :created
@@ -49,7 +53,7 @@ end
 
 
 def review_params
-params.permit(:anime_id,:user_id,:content, :recommend)
+params.permit(:anime_id,:content, :recommend)
 end
 
 end

@@ -2,11 +2,14 @@
 
 class UserBlueprint < Blueprinter::Base
     identifier :id
-    
 
 
     view :public_user do 
         fields :username
+    end
+
+    view :profile do
+        fields :username, :email
     end
 
     view :anime_list do 

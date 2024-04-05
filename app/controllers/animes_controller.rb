@@ -3,7 +3,7 @@ class AnimesController < ApplicationController
     ]
     before_action :authenticate_request, only: [:create, :update, :destroy]
 
-    def create
+  def create
         anime = Anime.new(anime_params)
 
         if anime.save
@@ -13,9 +13,6 @@ class AnimesController < ApplicationController
       end
         end
         
-  # def index
-  #   render json: Anime.all
-  # end
       
   def index
     render json: AnimeBlueprint.render(Anime.all, view: :top_anime), status: :ok
