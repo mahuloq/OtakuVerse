@@ -12805,3 +12805,700 @@ Processing by AnimesController#show as HTML
 Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 6078)
 
 
+Started POST "/login" for ::1 at 2024-04-06 15:45:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"username"=>"test", "password"=>"[FILTERED]", "session"=>{"username"=>"test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 200 OK in 423ms (Views: 0.3ms | ActiveRecord: 4.3ms | Allocations: 25750)
+
+
+Started GET "/animes" for ::1 at 2024-04-06 15:45:38 -0500
+Processing by AnimesController#index as HTML
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/animes_controller.rb:18:in `index'
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 18], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 20], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+Completed 200 OK in 434ms (Views: 0.4ms | ActiveRecord: 7.8ms | Allocations: 66920)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--7cc96b3ecef71e459fd2443665b7683b00bf5e8d/cowboy.jpg" for ::1 at 2024-04-06 15:45:39 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--7cc96b3ecef71e459fd2443665b7683b00bf5e8d", "filename"=>"cowboy"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[36m  Disk Storage (576.7ms) [0m[34mGenerated URL for file at key: 7ln4ie828stvxc5g91vuvqfwhp43 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMDo1MDo0MC4xNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--ebbfe5a220f6feb7e56455201fa188e7d1ab0e44/cowboy.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMDo1MDo0MC4xNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--ebbfe5a220f6feb7e56455201fa188e7d1ab0e44/cowboy.jpg
+Completed 302 Found in 624ms (ActiveRecord: 0.1ms | Allocations: 286638)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMDo1MDo0MC4xNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--ebbfe5a220f6feb7e56455201fa188e7d1ab0e44/cowboy.jpg" for ::1 at 2024-04-06 15:45:40 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"cowboy"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 245)
+
+
+Started GET "/animes/21" for ::1 at 2024-04-06 15:47:27 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.2ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 166ms (Views: 0.1ms | ActiveRecord: 10.2ms | Allocations: 17781)
+
+
+Started POST "/reviews" for ::1 at 2024-04-06 15:47:38 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"id"=>0, "recommend"=>"recommend", "content"=>"This is a review!", "user"=>{"id"=>0, "username"=>"", "email"=>""}, "anime_id"=>21, "review"=>{"id"=>0, "anime_id"=>21, "content"=>"This is a review!", "recommend"=>"recommend"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `authenticate_request'
+[31mUnpermitted parameters: :id, :user, :review. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x00007662ed1bd3e0>, params: {"id"=>0, "recommend"=>"recommend", "content"=>"This is a review!", "user"=>{"id"=>0, "username"=>"", "email"=>""}, "anime_id"=>21, "controller"=>"reviews", "action"=>"create", "review"=>{"id"=>0, "anime_id"=>21, "content"=>"This is a review!", "recommend"=>"recommend"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+  [1m[36mAnime Load (3.0ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+  [1m[36mReview Create (2.7ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "anime_id", "content", "created_at", "updated_at", "recommend") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 49], ["anime_id", 21], ["content", "This is a review!"], ["created_at", "2024-04-06 20:47:38.960399"], ["updated_at", "2024-04-06 20:47:38.960399"], ["recommend", 0]]
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+Completed 201 Created in 52ms (Views: 0.4ms | ActiveRecord: 9.3ms | Allocations: 10935)
+
+
+Started GET "/animes/21" for ::1 at 2024-04-06 15:47:39 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mAnime Load (0.1ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.2ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 4879)
+
+
+Started GET "/animes/21" for ::1 at 2024-04-06 15:47:45 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mAnime Load (0.1ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.2ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 4570)
+
+
+Started GET "/animes" for ::1 at 2024-04-06 16:22:07 -0500
+Processing by AnimesController#index as HTML
+  [1m[36mAnime Load (3.4ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/animes_controller.rb:18:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 18], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 20], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+Completed 200 OK in 55ms (Views: 0.3ms | ActiveRecord: 7.8ms | Allocations: 17036)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--7cc96b3ecef71e459fd2443665b7683b00bf5e8d/cowboy.jpg" for ::1 at 2024-04-06 16:22:07 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--7cc96b3ecef71e459fd2443665b7683b00bf5e8d", "filename"=>"cowboy"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: 7ln4ie828stvxc5g91vuvqfwhp43 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMToyNzowOC4wMDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--07e2574d1bad6cbf3f3bf40ceb6d16ffd8268446/cowboy.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMToyNzowOC4wMDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--07e2574d1bad6cbf3f3bf40ceb6d16ffd8268446/cowboy.jpg
+Completed 302 Found in 15ms (ActiveRecord: 0.1ms | Allocations: 1127)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMToyNzowOC4wMDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--07e2574d1bad6cbf3f3bf40ceb6d16ffd8268446/cowboy.jpg" for ::1 at 2024-04-06 16:22:08 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"cowboy"}
+Completed 200 OK in 6ms (ActiveRecord: 0.0ms | Allocations: 134)
+
+
+Started GET "/animes" for ::1 at 2024-04-06 16:22:12 -0500
+Processing by AnimesController#index as HTML
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/animes_controller.rb:18:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 18], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 20], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+Completed 200 OK in 177ms (Views: 0.1ms | ActiveRecord: 4.7ms | Allocations: 16594)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMToyNzowOC4wMDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--07e2574d1bad6cbf3f3bf40ceb6d16ffd8268446/cowboy.jpg" for ::1 at 2024-04-06 16:22:13 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"cowboy"}
+Completed 304 Not Modified in 6ms (ActiveRecord: 0.0ms | Allocations: 127)
+
+
+Started GET "/animes" for ::1 at 2024-04-06 16:22:43 -0500
+Processing by AnimesController#index as HTML
+  [1m[36mAnime Load (1.0ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/animes_controller.rb:18:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 18], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 20], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+Completed 200 OK in 94ms (Views: 0.1ms | ActiveRecord: 4.8ms | Allocations: 16594)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMToyNzowOC4wMDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--07e2574d1bad6cbf3f3bf40ceb6d16ffd8268446/cowboy.jpg" for ::1 at 2024-04-06 16:22:43 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"cowboy"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 124)
+
+
+Started GET "/animes/21" for ::1 at 2024-04-06 16:22:49 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.1ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 4747)
+
+
+Started POST "/reviews" for ::1 at 2024-04-06 16:22:57 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"id"=>0, "recommend"=>"recommend", "content"=>"Another Review", "user"=>{"id"=>0, "username"=>"", "email"=>""}, "anime_id"=>21, "review"=>{"id"=>0, "anime_id"=>21, "content"=>"Another Review", "recommend"=>"recommend"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `authenticate_request'
+[31mUnpermitted parameters: :id, :user, :review. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x00007662ecfec818>, params: {"id"=>0, "recommend"=>"recommend", "content"=>"Another Review", "user"=>{"id"=>0, "username"=>"", "email"=>""}, "anime_id"=>21, "controller"=>"reviews", "action"=>"create", "review"=>{"id"=>0, "anime_id"=>21, "content"=>"Another Review", "recommend"=>"recommend"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+  [1m[36mAnime Load (3.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+  [1m[36mReview Create (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "anime_id", "content", "created_at", "updated_at", "recommend") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 49], ["anime_id", 21], ["content", "Another Review"], ["created_at", "2024-04-06 21:22:57.528780"], ["updated_at", "2024-04-06 21:22:57.528780"], ["recommend", 0]]
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+Completed 201 Created in 24ms (Views: 0.8ms | ActiveRecord: 7.6ms | Allocations: 3143)
+
+
+Started GET "/animes/21" for ::1 at 2024-04-06 16:22:57 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mAnime Load (0.3ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.2ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 5231)
+
+
+Started GET "/animes" for ::1 at 2024-04-06 16:37:12 -0500
+Processing by AnimesController#index as HTML
+  [1m[36mAnime Load (1.4ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/animes_controller.rb:18:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 18], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 20], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+Completed 200 OK in 57ms (Views: 0.1ms | ActiveRecord: 4.4ms | Allocations: 17033)
+
+
+Started GET "/animes/21" for ::1 at 2024-04-06 16:37:18 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.1ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 5399)
+
+
+Started GET "/animes" for ::1 at 2024-04-06 16:40:22 -0500
+Processing by AnimesController#index as HTML
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/animes_controller.rb:18:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 18], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 20], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+Completed 200 OK in 64ms (Views: 0.8ms | ActiveRecord: 2.5ms | Allocations: 16594)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--7cc96b3ecef71e459fd2443665b7683b00bf5e8d/cowboy.jpg" for ::1 at 2024-04-06 16:40:23 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--7cc96b3ecef71e459fd2443665b7683b00bf5e8d", "filename"=>"cowboy"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: 7ln4ie828stvxc5g91vuvqfwhp43 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMTo0NToyMy4xMzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--458219e237d849a1ec5fe50f7c7f3e0f56bce13e/cowboy.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMTo0NToyMy4xMzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--458219e237d849a1ec5fe50f7c7f3e0f56bce13e/cowboy.jpg
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1129)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMTo0NToyMy4xMzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--458219e237d849a1ec5fe50f7c7f3e0f56bce13e/cowboy.jpg" for ::1 at 2024-04-06 16:40:23 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"cowboy"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 135)
+
+
+Started GET "/animes/1" for ::1 at 2024-04-06 16:40:24 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAnime Load (0.1ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.2ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 3294)
+
+
+Started GET "/genres" for ::1 at 2024-04-06 16:40:50 -0500
+Processing by GenresController#index as HTML
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/genres_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2467)
+
+
+Started GET "/animes" for ::1 at 2024-04-06 16:40:53 -0500
+Processing by AnimesController#index as HTML
+  [1m[36mAnime Load (0.8ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/animes_controller.rb:18:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 18], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 20], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+Completed 200 OK in 73ms (Views: 0.1ms | ActiveRecord: 3.8ms | Allocations: 16594)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wNlQyMTo0NToyMy4xMzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--458219e237d849a1ec5fe50f7c7f3e0f56bce13e/cowboy.jpg" for ::1 at 2024-04-06 16:40:53 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"cowboy"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 124)
+
+
+Started GET "/animes/21" for ::1 at 2024-04-06 16:40:57 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.1ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 5223)
+
+
+Started GET "/animes" for ::1 at 2024-04-06 16:41:58 -0500
+Processing by AnimesController#index as HTML
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/animes_controller.rb:18:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 18], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 20], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+Completed 200 OK in 49ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 16594)
+
+
+Started GET "/animes/1" for ::1 at 2024-04-06 16:42:00 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.1ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3294)
+
+

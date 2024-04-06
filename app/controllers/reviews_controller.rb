@@ -6,55 +6,44 @@ class ReviewsController < ApplicationController
   before_action :authenticate_request, only: %i[create update destroy]
 
   def create
-      
     review = @current_user.reviews.new(review_params)
-  
-      if review.save
-          render json: review, status: :created
-      else
-          render json:  review.errors, status: :unprocessable_entity
+
+    if review.save
+      render json: review, status: :created
+    else
+      render json: review.errors, status: :unprocessable_entity
     end
-      end
+  end
 
+  def show
+    render json: ReviewBlueprint.render(@review, view: :review_detailed), status: :ok 
+  end
 
-def show
-  render json: ReviewBlueprint.render(@review, view: :review_detailed), status: :ok 
-end
+  def update
+    if @review.update(review_params)
+      render json: @review, status: :ok 
+    else
+      render json: @review.errors, status: :unprocessable_entity
+    end
+  end
 
+  def destroy
+    if @review.destroy
+      head :no_content
+    else
+      render json: @review.errors, status: :ok
+    end
+  end
 
-def update 
-  if @review.update(review_params)
-    render json: @review, status: :ok 
-  else 
-    render json: @review.errors, status: :unprocessable_entity
+  private
+
+  def set_review
+    @review = Review.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: 'review not found' }, status: :not_found
+  end
+
+  def review_params
+    params.permit(:anime_id,:content, :recommend)
   end
 end
-
-
-def destroy
-  
-if @review.destroy
-  head :no_content
-else 
-  render json: @review.errors, status: :ok
-end
-
-end
-
-
-
-private
-  
-def set_review
-  @review = Review.find(params[:id])
-rescue ActiveRecord::RecordNotFound
-  render json: { error: 'review not found' }, status: :not_found
-end
-
-
-def review_params
-params.permit(:anime_id,:content, :recommend)
-end
-
-end
-
