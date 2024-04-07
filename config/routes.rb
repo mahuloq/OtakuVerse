@@ -13,6 +13,12 @@ Rails.application.routes.draw do
     post 'upload_image', to: 'users#upload_image'
   end
 
+#Person Search Route
+  get '/api/search', to: 'search#search'
+
+#Create a new cast entry
+resources :cast_and_crews
+
 #Review with Comments
 resources :reviews, only: [:create, :show, :update, :destroy]
 

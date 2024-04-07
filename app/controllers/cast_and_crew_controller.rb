@@ -42,7 +42,7 @@ class CastAndCrewController < ApplicationController
     
     
     def cast_params
-      params.permit(:role,:character)
+      params.permit(:role, :character)
     end
     
     end

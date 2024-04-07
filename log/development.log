@@ -13502,3 +13502,377 @@ Processing by AnimesController#show as HTML
 Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3294)
 
 
+  [1m[36mPerson Count (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/api/search?name=test" for ::1 at 2024-04-06 23:35:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"test"}
+  [1m[36mPerson Load (1.5ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%test%' OR last_name LIKE'%test%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 41ms (Views: 1.7ms | ActiveRecord: 3.7ms | Allocations: 10955)
+
+
+Started GET "/api/search?name=Wild" for ::1 at 2024-04-06 23:35:31 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wild"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wild%' OR last_name LIKE'%Wild%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 632)
+
+
+Started GET "/api/search?name=Wilf" for ::1 at 2024-04-06 23:35:33 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wilf"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wilf%' OR last_name LIKE'%Wilf%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 68ms (Views: 66.2ms | ActiveRecord: 1.1ms | Allocations: 16598)
+
+
+Started GET "/api/search?name=Wilfredo" for ::1 at 2024-04-06 23:35:33 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wilfredo"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wilfredo%' OR last_name LIKE'%Wilfredo%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 709)
+
+
+Started GET "/api/search?name=Wilfredo%20Padberg" for ::1 at 2024-04-06 23:35:40 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wilfredo Padberg"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wilfredo Padberg%' OR last_name LIKE'%Wilfredo Padberg%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 632)
+
+
+Started GET "/api/search?name=Wilfredo%20" for ::1 at 2024-04-06 23:35:43 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wilfredo "}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wilfredo %' OR last_name LIKE'%Wilfredo %')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 619)
+
+
+Started GET "/api/search?name=" for ::1 at 2024-04-06 23:35:44 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>""}
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%%' OR last_name LIKE'%%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.5ms | Allocations: 6846)
+
+
+Started GET "/api/search?name=Padberg" for ::1 at 2024-04-06 23:35:47 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Padberg"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Padberg%' OR last_name LIKE'%Padberg%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/api/search?name=Padber" for ::1 at 2024-04-06 23:35:48 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Padber"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Padber%' OR last_name LIKE'%Padber%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 697)
+
+
+Started GET "/api/search?name=Padbe" for ::1 at 2024-04-06 23:35:50 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Padbe"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Padbe%' OR last_name LIKE'%Padbe%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/api/search?name=Padb" for ::1 at 2024-04-06 23:35:51 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Padb"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Padb%' OR last_name LIKE'%Padb%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/api/search?name=Pad" for ::1 at 2024-04-06 23:35:52 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Pad"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Pad%' OR last_name LIKE'%Pad%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 697)
+
+
+Started GET "/api/search?name=Pa" for ::1 at 2024-04-06 23:35:53 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Pa"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Pa%' OR last_name LIKE'%Pa%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1038)
+
+
+Started GET "/api/search?name=" for ::1 at 2024-04-06 23:36:04 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>""}
+  [1m[36mPerson Load (0.9ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%%' OR last_name LIKE'%%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 6834)
+
+
+Started GET "/api/search?name=Wilf" for ::1 at 2024-04-06 23:40:12 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wilf"}
+  [1m[36mPerson Load (10.9ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wilf%' OR last_name LIKE'%Wilf%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 15ms (Views: 4.2ms | ActiveRecord: 10.9ms | Allocations: 697)
+
+
+Started GET "/api/search?name=Wil" for ::1 at 2024-04-06 23:40:15 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wil"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wil%' OR last_name LIKE'%Wil%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/api/search?name=Wi" for ::1 at 2024-04-06 23:40:15 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wi"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wi%' OR last_name LIKE'%Wi%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 765)
+
+
+Started GET "/api/search?name=W" for ::1 at 2024-04-06 23:40:16 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"W"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%W%' OR last_name LIKE'%W%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1378)
+
+
+Started GET "/api/search?name=w" for ::1 at 2024-04-06 23:42:06 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"w"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%w%' OR last_name LIKE'%w%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1378)
+
+
+Started GET "/api/search?name=wil" for ::1 at 2024-04-06 23:42:07 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"wil"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%wil%' OR last_name LIKE'%wil%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 697)
+
+
+Started GET "/api/search?name=wilf" for ::1 at 2024-04-06 23:42:09 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"wilf"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%wilf%' OR last_name LIKE'%wilf%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/api/search?name=Wilfredo%20Padberg" for ::1 at 2024-04-06 23:42:12 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wilfredo Padberg"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wilfredo Padberg%' OR last_name LIKE'%Wilfredo Padberg%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 621)
+
+
+Started GET "/api/search?name=wil" for ::1 at 2024-04-06 23:42:33 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"wil"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%wil%' OR last_name LIKE'%wil%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 697)
+
+
+Started GET "/api/search?name=wilf" for ::1 at 2024-04-06 23:42:34 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"wilf"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%wilf%' OR last_name LIKE'%wilf%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/api/search?name=w" for ::1 at 2024-04-06 23:42:39 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"w"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%w%' OR last_name LIKE'%w%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 1378)
+
+
+Started GET "/api/search?name=Whitney%20Littel" for ::1 at 2024-04-06 23:42:56 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Whitney Littel"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Whitney Littel%' OR last_name LIKE'%Whitney Littel%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 621)
+
+
+Started GET "/api/search?name=w" for ::1 at 2024-04-06 23:43:32 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"w"}
+  [1m[36mPerson Load (13.4ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%w%' OR last_name LIKE'%w%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 18ms (Views: 4.5ms | ActiveRecord: 13.3ms | Allocations: 1378)
+
+
+Started GET "/api/search?name=Wilfredo%20Padberg" for ::1 at 2024-04-06 23:43:34 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wilfredo Padberg"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wilfredo Padberg%' OR last_name LIKE'%Wilfredo Padberg%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 621)
+
+
+Started GET "/api/search?name=w" for ::1 at 2024-04-06 23:43:37 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"w"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%w%' OR last_name LIKE'%w%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1378)
+
+
+Started GET "/api/search?name=Eloy%20Gutkowski" for ::1 at 2024-04-06 23:43:39 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Eloy Gutkowski"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Eloy Gutkowski%' OR last_name LIKE'%Eloy Gutkowski%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 621)
+
+
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/api/search?name=w" for ::1 at 2024-04-06 23:45:02 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"w"}
+  [1m[36mPerson Load (15.4ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%w%' OR last_name LIKE'%w%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 22ms (Views: 6.4ms | ActiveRecord: 15.4ms | Allocations: 1378)
+
+
+Started GET "/api/search?name=Wilfredo%20Padberg" for ::1 at 2024-04-06 23:45:04 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wilfredo Padberg"}
+  [1m[36mPerson Load (15.7ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wilfredo Padberg%' OR last_name LIKE'%Wilfredo Padberg%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 20ms (Views: 3.7ms | ActiveRecord: 15.7ms | Allocations: 621)
+
+
+Started GET "/api/search?name=wil" for ::1 at 2024-04-06 23:49:37 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"wil"}
+  [1m[36mPerson Load (1.5ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%wil%' OR last_name LIKE'%wil%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 28ms (Views: 9.2ms | ActiveRecord: 12.7ms | Allocations: 7050)
+
+
+Started GET "/api/search?name=Wilfredo%20Padberg" for ::1 at 2024-04-06 23:49:39 -0500
+Processing by SearchController#search as HTML
+  Parameters: {"name"=>"Wilfredo Padberg"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (first_name LIKE '%Wilfredo Padberg%' OR last_name LIKE'%Wilfredo Padberg%')[0m
+  ↳ app/controllers/search_controller.rb:8:in `search'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 622)
+
+
+Started GET "/animes" for ::1 at 2024-04-06 23:50:03 -0500
+Processing by AnimesController#index as HTML
+  [1m[36mAnime Load (12.1ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/animes_controller.rb:18:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 18], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 20], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+Completed 200 OK in 418ms (Views: 0.2ms | ActiveRecord: 19.9ms | Allocations: 67098)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--7cc96b3ecef71e459fd2443665b7683b00bf5e8d/cowboy.jpg" for ::1 at 2024-04-06 23:50:03 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--7cc96b3ecef71e459fd2443665b7683b00bf5e8d", "filename"=>"cowboy"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[36m  Disk Storage (759.0ms) [0m[34mGenerated URL for file at key: 7ln4ie828stvxc5g91vuvqfwhp43 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wN1QwNDo1NTowNC42NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--3edd22b6076b738fdd4a900bd08707849dee6716/cowboy.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wN1QwNDo1NTowNC42NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--3edd22b6076b738fdd4a900bd08707849dee6716/cowboy.jpg
+Completed 302 Found in 799ms (ActiveRecord: 0.1ms | Allocations: 283758)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0wN1QwNDo1NTowNC42NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--3edd22b6076b738fdd4a900bd08707849dee6716/cowboy.jpg" for ::1 at 2024-04-06 23:50:04 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"cowboy"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 245)
+
+
+Started GET "/animes/1" for ::1 at 2024-04-06 23:50:06 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAnime Load (15.7ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.2ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 123ms (Views: 0.2ms | ActiveRecord: 18.1ms | Allocations: 15269)
+
+
+Started GET "/animes/1" for ::1 at 2024-04-06 23:50:14 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAnime Load (21.9ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.1ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:20:in `cover_photo_url'
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 73ms (Views: 0.2ms | ActiveRecord: 23.0ms | Allocations: 3306)
+
+
