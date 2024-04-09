@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
 #Person Search Route
-  get '/api/search', to: 'search#search'
+  get '/api/searchPerson', to: 'search#searchPerson'
 
 #Create a new cast entry
 resources :cast_and_crew

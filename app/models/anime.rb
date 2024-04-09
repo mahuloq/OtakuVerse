@@ -1,9 +1,12 @@
+# frozen_string_literal: true
 
+# Anime Model defining validation
 class Anime < ApplicationRecord
-include Rails.application.routes.url_helpers
+  include Rails.application.routes.url_helpers
 
-#methods
-def add_genre(genre)
+  # methods
+
+  def add_genre(genre)
     self.genres << genre
   end
 

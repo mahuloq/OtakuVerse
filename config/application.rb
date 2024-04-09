@@ -1,4 +1,5 @@
 require_relative "boot"
+require_relative '../lib/uri_utils'
 
 require "rails/all"
 

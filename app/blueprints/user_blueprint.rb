@@ -9,10 +9,10 @@ class UserBlueprint < Blueprinter::Base
     end
 
     view :profile do
-        fields :username, :email
+        fields :username
     end
 
-    view :anime_list do 
+    view :anime_list do
         fields :username
 
         association :anime_lists, blueprint: AnimeListBlueprint, view: :anime_list

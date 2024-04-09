@@ -6,13 +6,17 @@ class CastAndCrewController < ApplicationController
   before_action :authenticate_request, only: %i[create update destroy]
 
   def create
-    cast = CastAndCrew.new(person_params)
+    cast = CastAndCrew.new(cast_params)
 
     if cast.save
       render json: cast, status: :created
     else
       render json: cast.errors, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @cast_and_crew = CastAndCrew.find(params[:id])
   end
 
   def update
