@@ -33,7 +33,8 @@ resources :people, only: [:create, :show, :update, :destroy]
 
 
  #Profile Routes 
-  get 'profiles/:username', to: 'profiles#show', as: :profile
+  get 'profiles/:username', to: 'profiles#show', constraints: { username: /.*/ }
+
 
  #AnimeList Routes 
   get 'animelist/:username', to: 'anime_lists#show', as: :anime_list

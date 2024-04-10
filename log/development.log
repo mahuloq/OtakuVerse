@@ -16109,3 +16109,225 @@ Filter chain halted as :set_profile rendered or redirected
 Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 461)
 
 
+Started GET "/profiles/ivey.hand" for ::1 at 2024-04-10 12:20:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfilesController#show as */*
+  Parameters: {"username"=>"ivey"}
+Started GET "/profiles/test" for ::1 at 2024-04-10 12:21:03 -0500
+Processing by ProfilesController#show as HTML
+  Parameters: {"username"=>"test"}
+Started GET "/animes" for ::1 at 2024-04-10 12:21:03 -0500
+Processing by AnimesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ivey"], ["LIMIT", 1]]
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:55:in `set_profile'
+  ↳ app/controllers/profiles_controller.rb:55:in `set_profile'
+Filter chain halted as :set_profile rendered or redirected
+Completed 404 Not Found in 52346ms (Views: 0.6ms | ActiveRecord: 8.4ms | Allocations: 171108)
+
+
+  [1m[36mAnime Load (0.2ms)[0m  [1m[34mSELECT "animes".* FROM "animes"[0m
+  ↳ app/controllers/animes_controller.rb:18:in `index'
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:58:in `set_profile'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 43], ["record_type", "Profile"], ["name", "profile_photo"], ["LIMIT", 1]]
+  ↳ app/models/profile.rb:8:in `profile_photo_url'
+  [1m[36mAnimeList Load (0.2ms)[0m  [1m[34mSELECT "anime_lists".* FROM "anime_lists" WHERE "anime_lists"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ app/controllers/profiles_controller.rb:20:in `show'
+Completed 200 OK in 3671ms (Views: 0.5ms | ActiveRecord: 11.9ms | Allocations: 111709)
+
+
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (2.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 15], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 16], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 17], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 18], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 19], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 20], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 22], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+Completed 200 OK in 946ms (Views: 0.6ms | ActiveRecord: 13.9ms | Allocations: 103485)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--7cc96b3ecef71e459fd2443665b7683b00bf5e8d/cowboy.jpg" for ::1 at 2024-04-10 12:21:07 -0500
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--d4b74ec82bf3c29cdb0b162f71ea83c80b59d20c/8-A1ogKAlJvYLEf11.png" for ::1 at 2024-04-10 12:21:07 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--7cc96b3ecef71e459fd2443665b7683b00bf5e8d", "filename"=>"cowboy"}
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--d4b74ec82bf3c29cdb0b162f71ea83c80b59d20c", "filename"=>"8-A1ogKAlJvYLEf11"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[36m  Disk Storage (916.6ms) [0m[34mGenerated URL for file at key: 7ln4ie828stvxc5g91vuvqfwhp43 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0xMFQxNzoyNjowOC4zMjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--d4a2c9225d8895265fb2ad00936b045187bd6af8/cowboy.jpg)[0m
+[36m  Disk Storage (911.3ms) [0m[34mGenerated URL for file at key: zm2fvblofcquckw9il3sczywv9sp (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ6bTJmdmJsb2ZjcXVja3c5aWwzc2N6eXd2OXNwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiOC1BMW9nS0FsSnZZTEVmMTEucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnOC1BMW9nS0FsSnZZTEVmMTEucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0xMFQxNzoyNjowOC4zMjdaIiwicHVyIjoiYmxvYl9rZXkifX0=--9b846abd9d5692b7835e7133843c1d33e6dd6acd/8-A1ogKAlJvYLEf11.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0xMFQxNzoyNjowOC4zMjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--d4a2c9225d8895265fb2ad00936b045187bd6af8/cowboy.jpg
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ6bTJmdmJsb2ZjcXVja3c5aWwzc2N6eXd2OXNwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiOC1BMW9nS0FsSnZZTEVmMTEucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnOC1BMW9nS0FsSnZZTEVmMTEucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0xMFQxNzoyNjowOC4zMjdaIiwicHVyIjoiYmxvYl9rZXkifX0=--9b846abd9d5692b7835e7133843c1d33e6dd6acd/8-A1ogKAlJvYLEf11.png
+Completed 302 Found in 971ms (ActiveRecord: 0.3ms | Allocations: 298078)
+
+
+Completed 302 Found in 961ms (ActiveRecord: 0.8ms | Allocations: 297781)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bG40aWU4MjhzdHZ4YzVnOTF2dXZxZndocDQzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY293Ym95LmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Nvd2JveS5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0xMFQxNzoyNjowOC4zMjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--d4a2c9225d8895265fb2ad00936b045187bd6af8/cowboy.jpg" for ::1 at 2024-04-10 12:21:08 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ6bTJmdmJsb2ZjcXVja3c5aWwzc2N6eXd2OXNwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiOC1BMW9nS0FsSnZZTEVmMTEucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnOC1BMW9nS0FsSnZZTEVmMTEucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNC0xMFQxNzoyNjowOC4zMjdaIiwicHVyIjoiYmxvYl9rZXkifX0=--9b846abd9d5692b7835e7133843c1d33e6dd6acd/8-A1ogKAlJvYLEf11.png" for ::1 at 2024-04-10 12:21:08 -0500
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"cowboy"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"8-A1ogKAlJvYLEf11"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 157)
+
+
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms | Allocations: 604)
+
+
+Started GET "/animes/21" for ::1 at 2024-04-10 12:21:17 -0500
+Processing by AnimesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mAnime Load (0.5ms)[0m  [1m[34mSELECT "animes".* FROM "animes" WHERE "animes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:87:in `set_anime'
+  [1m[36mCastAndCrew Load (0.7ms)[0m  [1m[34mSELECT "cast_and_crews".* FROM "cast_and_crews" WHERE "cast_and_crews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 21], ["record_type", "Anime"], ["name", "cover_photo"], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/anime.rb:23:in `cover_photo_url'
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "animes_genres" ON "genres"."id" = "animes_genres"."genre_id" WHERE "animes_genres"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."anime_id" = ?[0m  [["anime_id", 21]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/animes_controller.rb:22:in `show'
+Completed 200 OK in 341ms (Views: 0.2ms | ActiveRecord: 11.2ms | Allocations: 42652)
+
+
+Started GET "/profiles/dobber" for ::1 at 2024-04-10 12:21:19 -0500
+Processing by ProfilesController#show as HTML
+  Parameters: {"username"=>"dobber"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dobber"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:55:in `set_profile'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:58:in `set_profile'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 42], ["record_type", "Profile"], ["name", "profile_photo"], ["LIMIT", 1]]
+  ↳ app/models/profile.rb:8:in `profile_photo_url'
+  [1m[36mAnimeList Load (0.1ms)[0m  [1m[34mSELECT "anime_lists".* FROM "anime_lists" WHERE "anime_lists"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ app/controllers/profiles_controller.rb:20:in `show'
+Completed 200 OK in 2419ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 55916)
+
+
+Started GET "/profiles/test" for ::1 at 2024-04-10 12:21:35 -0500
+Processing by ProfilesController#show as HTML
+  Parameters: {"username"=>"test"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:55:in `set_profile'
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:58:in `set_profile'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 43], ["record_type", "Profile"], ["name", "profile_photo"], ["LIMIT", 1]]
+  ↳ app/models/profile.rb:8:in `profile_photo_url'
+  [1m[36mAnimeList Load (0.3ms)[0m  [1m[34mSELECT "anime_lists".* FROM "anime_lists" WHERE "anime_lists"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ app/controllers/profiles_controller.rb:20:in `show'
+Completed 200 OK in 9090ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 47481)
+
+
+Started GET "/profiles/ivey.hand" for ::1 at 2024-04-10 12:21:50 -0500
+Processing by ProfilesController#show as */*
+  Parameters: {"username"=>"ivey"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ivey"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:55:in `set_profile'
+Filter chain halted as :set_profile rendered or redirected
+Completed 404 Not Found in 73199ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 46428)
+
+
+Started GET "/profiles/ivey.hand" for ::1 at 2024-04-10 12:23:09 -0500
+  
+Zeitwerk::NameError (expected file /home/mahuloq/codelabs/Ruby/CodeProject/Backend/OtakuVerse/lib/uri_utils.rb to define constant UriUtils, but didn't):
+  
+app/controllers/profiles_controller.rb:3:in `<main>'
+Started GET "/profiles/ivey.hand" for ::1 at 2024-04-10 12:23:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfilesController#show as HTML
+  Parameters: {"username"=>"ivey.hand"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ivey.hand"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:55:in `set_profile'
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:58:in `set_profile'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 45], ["record_type", "Profile"], ["name", "profile_photo"], ["LIMIT", 1]]
+  ↳ app/models/profile.rb:8:in `profile_photo_url'
+  [1m[36mAnimeList Load (0.3ms)[0m  [1m[34mSELECT "anime_lists".* FROM "anime_lists" WHERE "anime_lists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/profiles_controller.rb:20:in `show'
+Completed 200 OK in 8522ms (Views: 0.6ms | ActiveRecord: 12.7ms | Allocations: 169312)
+
+
+Started GET "/profiles/ivey.hand" for ::1 at 2024-04-10 12:27:07 -0500
+Processing by ProfilesController#show as HTML
+  Parameters: {"username"=>"ivey.hand"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ivey.hand"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:55:in `set_profile'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:58:in `set_profile'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 45], ["record_type", "Profile"], ["name", "profile_photo"], ["LIMIT", 1]]
+Started GET "/profiles/ivey.hand" for ::1 at 2024-04-10 12:27:27 -0500
+  ↳ app/models/profile.rb:8:in `profile_photo_url'
+  [1m[36mAnimeList Load (0.2ms)[0m  [1m[34mSELECT "anime_lists".* FROM "anime_lists" WHERE "anime_lists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/profiles_controller.rb:20:in `show'
+Completed 200 OK in 20002ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 46418)
+
+
+Processing by ProfilesController#show as HTML
+  Parameters: {"username"=>"ivey.hand"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ivey.hand"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:55:in `set_profile'
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:58:in `set_profile'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 45], ["record_type", "Profile"], ["name", "profile_photo"], ["LIMIT", 1]]
+  ↳ app/models/profile.rb:8:in `profile_photo_url'
+  [1m[36mAnimeList Load (0.4ms)[0m  [1m[34mSELECT "anime_lists".* FROM "anime_lists" WHERE "anime_lists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/profiles_controller.rb:20:in `show'
+Completed 200 OK in 1229ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 52144)
+
+
