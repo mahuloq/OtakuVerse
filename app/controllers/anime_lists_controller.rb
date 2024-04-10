@@ -33,6 +33,7 @@ end
     anime_list = AnimeList.find(params[:id])
     anime_list.destroy if anime_list
     head :no_content
+    puts "anime destroyed"
   end
   
 
