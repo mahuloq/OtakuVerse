@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'uri_utils'
+# require 'uri_utils'
 
 # Manages creating, retriving and storing profile info
 class ProfilesController < ApplicationController
@@ -50,9 +50,9 @@ class ProfilesController < ApplicationController
 
   def set_profile
   
-    decoded_username = URIUtils.decode_uri(params[:username])
+    # decoded_username = URIUtils.decode_uri(params[:username])
     
-    user = User.find_by(username: decoded_username)
+    user = User.find_by(username: params[:username])
 
   if user
     @profile = user.profile || user.create_profile
