@@ -45,11 +45,11 @@ class ProfilesController < ApplicationController
      render json: {messge: "Profile photo upload failed"}, status: :unprocessable_entity
     end
    end
-
+rails
   private
 
   def set_profile
-   debugger
+  
     decoded_username = URIUtils.decode_uri(params[:username])
     
     user = User.find_by(username: decoded_username)
