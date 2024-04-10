@@ -45,7 +45,7 @@ class ProfilesController < ApplicationController
      render json: {messge: "Profile photo upload failed"}, status: :unprocessable_entity
     end
    end
-rails
+
   private
 
   def set_profile
