@@ -30,6 +30,7 @@ log/*.log
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
+storage/development.sqlite3
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key

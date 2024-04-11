@@ -37,8 +37,9 @@ resources :people, only: [:create, :show, :update, :destroy]
 
 
  #AnimeList Routes 
-  get 'animelist/:username', to: 'anime_lists#show', as: :anime_list
-  resources :anime_lists, only: [:create, :update, :destroy]
+ get 'animelist/:username', to: 'anime_lists#show'
+resources :anime_lists, only: [:create, :update, :destroy]
+
 
  #Session Routes
  post '/login', to: 'sessions#create'
