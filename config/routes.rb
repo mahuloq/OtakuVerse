@@ -13,36 +13,35 @@ Rails.application.routes.draw do
     post 'upload_image', to: 'users#upload_image'
   end
 
-#Person Search Route
+  # Person Search Route
   get '/api/searchPerson', to: 'search#searchPerson'
 
-#Create a new cast entry
-resources :cast_and_crew
+  # Create a new cast entry
+  resources :cast_and_crew do
+    collection do
+      get :fullCrew
+    end
+  end
 
-#Review with Comments
-resources :reviews, only: [:create, :show, :update, :destroy]
+  # Review with Comments
+  resources :reviews, only: [:create, :show, :update, :destroy]
 
-#Create Comments Route
-resources :comments, only: [:create, :update, :destroy]
+  # Create Comments Route
+  resources :comments, only: [:create, :update, :destroy]
 
-#Create/Update Genres
-resources :genres
+  # Create/Update Genres
+  resources :genres
 
-#Person Profile
-resources :people, only: [:create, :show, :update, :destroy]
+  # Person Profile
+  resources :people, only: [:create, :show, :update, :destroy]
 
-
- #Profile Routes 
+  # Profile Routes
   get 'profiles/:username', to: 'profiles#show', constraints: { username: /.*/ }
 
+  # AnimeList Routes
+  get 'animelist/:username', to: 'anime_lists#show'
+  resources :anime_lists, only: [:create, :update, :destroy]
 
- #AnimeList Routes 
- get 'animelist/:username', to: 'anime_lists#show'
-resources :anime_lists, only: [:create, :update, :destroy]
-
-
- #Session Routes
- post '/login', to: 'sessions#create'
-
-end
-  
+  # Session Routes
+  post '/login', to: 'sessions#create'
+  end

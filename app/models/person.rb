@@ -5,6 +5,7 @@ class Person < ApplicationRecord
     
 
 #Associations
+    has_one_attached :headshot
     has_many :cast_and_crews
     has_many :animes, through: :cast_and_crews
 

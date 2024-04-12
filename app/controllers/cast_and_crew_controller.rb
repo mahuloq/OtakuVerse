@@ -19,6 +19,11 @@ class CastAndCrewController < ApplicationController
     @cast_and_crew = CastAndCrew.find(params[:id])
   end
 
+  def fullCrew
+    @cast_and_crews = CastAndCrew.where(anime_id: params[:anime_id])
+    render json: CastAndCrewBlueprint.render(@cast_and_crews, view: :animeCastEdit), status: :ok
+  end
+
   def update
     if @cast.update(cast_params)
       render json: @cast, status: :ok
