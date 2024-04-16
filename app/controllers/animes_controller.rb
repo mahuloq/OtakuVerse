@@ -91,7 +91,7 @@ rescue ActiveRecord::RecordNotFound
 
 
   def anime_params
-    params.permit(:english_title, :romanji_title, :start_air_date, :end_air_date, :age_rating, :number_of_episodes, :description, :season, :studio, :source, :duration, :cover_photo, :image, genre_ids: [])
+    params.permit(:english_title, :romanji_title, :start_air_date, :end_air_date, :age_rating, :number_of_episodes, :description, :season, :studio, :source, :duration, :cover_photo, :image, genre_ids: [] )
   end
   
 

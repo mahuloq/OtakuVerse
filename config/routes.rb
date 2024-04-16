@@ -13,8 +13,9 @@ Rails.application.routes.draw do
     post 'upload_image', to: 'users#upload_image'
   end
 
-  # Person Search Route
+  # Search Route
   get '/api/searchPerson', to: 'search#searchPerson'
+  get '/api/searchGenre', to: 'search#searchGenre'
 
   # Create a new cast entry
   resources :cast_and_crew do

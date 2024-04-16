@@ -7,4 +7,10 @@ class SearchController < ApplicationController
     @results = Person.where('first_name LIKE ? OR last_name LIKE?', "%#{name}%", "%#{name}%")
     render json: @results
   end
+
+  def searchGenre
+    name = params[:name]
+    @results = Genre.where('name LIKE ?', "%#{name}%")
+    render json: @results
+  end
 end
