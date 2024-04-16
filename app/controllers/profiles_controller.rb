@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'uri_utils'
-
 # Manages creating, retriving and storing profile info
 class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[show update destroy]
@@ -49,8 +47,7 @@ class ProfilesController < ApplicationController
   private
 
   def set_profile
-  
-    # decoded_username = URIUtils.decode_uri(params[:username])
+
     
     user = User.find_by(username: params[:username])
 
