@@ -13,4 +13,35 @@ class SearchController < ApplicationController
     @results = Genre.where('name LIKE ?', "%#{name}%")
     render json: @results
   end
+
+  def searchAnimeByName
+    name = params[:name]
+    
+    @results = Anime.where("english_title LIKE ? OR romanji_title LIKE ?", "%#{name}%", "%#{name}%")
+    render json: @results
+  end
+
+  def searchAnimeLetter
+    letter = params[:letter].upcase + '%'
+
+    @animes = Anime.where("english_title LIKE ? OR romanji_title LIKE ?", letter, letter)
+
+    render json: @animes
+  end
+
+  def searchAnimeByGenreId
+   
+    id = params[:id]  
+    @genre = Genre.find(id)
+    @results = @genre.animes
+    render json: @results
+  end
+
+  def searchAnimeBySeason
+    season = params[:season]
+
+    @animes = Anime.where("season LIKE ?",season)
+    render json: @animes
+  end
+  
 end

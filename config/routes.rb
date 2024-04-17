@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   # Search Route
   get '/api/searchPerson', to: 'search#searchPerson'
   get '/api/searchGenre', to: 'search#searchGenre'
+  get '/api/searchAnimeLetter/:letter', to: 'search#searchAnimeLetter'
+  get '/api/searchAnimeByGenreId/:id', to: 'search#searchAnimeByGenreId'
+  get '/api/searchAnimeBySeason/:season', to: 'search#searchAnimeBySeason'
+  get '/api/searchAnimeByName', to: 'search#searchAnimeByName'
 
   # Create a new cast entry
   resources :cast_and_crew do
@@ -31,7 +35,9 @@ Rails.application.routes.draw do
   resources :comments, only: [:create, :update, :destroy]
 
   # Create/Update Genres
+  get '/genres/anime_count', to: 'genres#anime_count'
   resources :genres
+  
 
   # Person Profile
   resources :people, only: [:create, :show, :update, :destroy]

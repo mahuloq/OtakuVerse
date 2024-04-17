@@ -42,7 +42,10 @@ end
   
   end
   
-  
+  def anime_count
+    genres_with_count = Genre.left_joins(:animes).group('genres.id').select('genres.*, COUNT(animes.id) as anime_count')
+    render json: genres_with_count, status: :ok
+  end
   
   private
     
