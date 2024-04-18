@@ -12,8 +12,9 @@ validates :anime_id, presence: true
 validates :user_id, presence: true
 validates :list_type, presence: true
 
-#Associations  
+#Associations
   has_one :rating
+  accepts_nested_attributes_for :rating
   belongs_to :anime
   belongs_to :user
 end

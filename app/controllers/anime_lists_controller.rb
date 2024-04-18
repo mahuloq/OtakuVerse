@@ -47,9 +47,9 @@ end
   private
 
   def anime_list_params
-    params.permit(:anime_id, :user_id, :list_type, :start_date, :end_date, :episodes_watched,
-      rating_attributes: [:score]
-    )
+    params.permit(:anime_id, :user_id, :list_type, :start_date, :end_date, :episodes_watched,rating_attributes: [:score])
   end
-  
+  # def anime_list_params
+  #   params.require(:anime_list).permit(:anime_id, :user_id, :list_type, :start_date, :end_date, :episodes_watched,rating_attributes: [:score])
+  # end
 end
