@@ -13,6 +13,7 @@ validates :user_id, presence: true
 validates :list_type, presence: true
 
 #Associations  
+  has_one :rating
   belongs_to :anime
   belongs_to :user
 end

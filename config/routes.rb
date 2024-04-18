@@ -47,6 +47,8 @@ Rails.application.routes.draw do
 
   # AnimeList Routes
   get 'animelist/:username', to: 'anime_lists#show'
+  get '/anime_lists/:anime_id', to: 'anime_lists#get_anime_list'
+
   resources :anime_lists, only: [:create, :update, :destroy]
 
   # Session Routes

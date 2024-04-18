@@ -38,4 +38,8 @@ class AnimeBlueprint < Blueprinter::Base
         fields :english_title, :romanji_title, :start_air_date, :number_of_episodes, :description, :season, :studio, :source, :duration, :age_rating 
     end
 
+    view :seasonal_anime do
+        fields :english_title, :start_air_date, :end_air_date, :number_of_episodes, :season, :cover_photo_url, :description
+    end
+
 end

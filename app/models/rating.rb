@@ -8,4 +8,5 @@ class Rating < ApplicationRecord
 #Associations
   belongs_to :user
   belongs_to :anime
+  belongs_to :anime_list
 end

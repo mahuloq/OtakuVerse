@@ -16,7 +16,7 @@ identifier :id
 
       # association :ratings, blueprint: RatingBlueprint, view: :normal
 
-      association :users, blueprint: UserBlueprint, view: :public_user
+      association :user, blueprint: UserBlueprint, view: :public_user
   end
 
   view :review_detailed do

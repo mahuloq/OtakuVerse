@@ -17,7 +17,7 @@ class SearchController < ApplicationController
   def searchAnimeByName
     name = params[:name]
     
-    @results = Anime.where("english_title LIKE ? OR romanji_title LIKE ?", "%#{name}%", "%#{name}%")
+    @results = Anime.where("english_title LIKE ? OR romanji_title LIKE ?", "#{name}%", "#{name}%")
     render json: @results
   end
 
@@ -41,7 +41,7 @@ class SearchController < ApplicationController
     season = params[:season]
 
     @animes = Anime.where("season LIKE ?",season)
-    render json: @animes
+    render json: AnimeBlueprint.render(@animes, view: :seasonal_anime), status: :ok
   end
   
 end

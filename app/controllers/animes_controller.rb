@@ -2,6 +2,7 @@ class AnimesController < ApplicationController
     before_action :set_anime, only: [:show, :update, :destroy,:add_genre_to_anime, :add_genres, :upload_image, :upload_cover_photo
     ]
     before_action :authenticate_request, only: [:create, :update, :destroy]
+    before_action :verify_username, only: [:destroy]
 
   def create
         anime = Anime.new(anime_params)
@@ -94,5 +95,12 @@ rescue ActiveRecord::RecordNotFound
     params.permit(:english_title, :romanji_title, :start_air_date, :end_air_date, :age_rating, :number_of_episodes, :description, :season, :studio, :source, :duration, :cover_photo, :image, genre_ids: [] )
   end
   
+  def verify_username
+    expected_username = 'Admin'
+    unless @current_user&.username == expected_username
+      render json: { error: 'Unauthorized'}, status: :unauthorized
+    end
+  end
+
 
 end

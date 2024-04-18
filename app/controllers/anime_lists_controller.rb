@@ -1,11 +1,18 @@
 class AnimeListsController < ApplicationController
-  before_action :authenticate_request, only: [:create, :update, :destroy]
+  before_action :authenticate_request, only: [:create, :update, :destroy,:get_anime_list]
 
   def show
     @user = User.find_by(username: params[:username])
     @anime_list = AnimeList.where(user_id: @user.id)
     render json: @anime_list
   end
+
+  def get_anime_list
+    anime_list = AnimeList.find_by(user_id: @current_user.id, anime_id: params[:anime_id])
+
+    render json: anime_list
+  end
+
 
   def create
     
@@ -37,10 +44,12 @@ end
   end
   
 
-
   private
 
   def anime_list_params
-    params.permit(:anime_id, :user_id, :list_type, :start_date, :end_date, :episodes_watched)
+    params.permit(:anime_id, :user_id, :list_type, :start_date, :end_date, :episodes_watched,
+      rating_attributes: [:score]
+    )
   end
+  
 end
